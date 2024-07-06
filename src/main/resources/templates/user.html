@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Моя страница</title>
+
+</head>
+<body>
+<h1>Моя страница</h1>
+
+<table>
+    <tr>
+        <th>Имя пользователя</th>
+        <th>Роль</th>
+        <th>Email</th>
+    </tr>
+    <tr>
+        <td><span th:text="${#authentication.name}"></span></td>
+        <td><span th:text="${#authentication.authorities}"></span></td>
+        <td><span th:text="${user.getEmail()}"></span></td>
+    </tr>
+</table>
+
+<p>
+    <a th:href="@{/index}"><button type="button">Главная страница</button></a>
+    <a href="/logout"><button type="button">Выход</button></a>
+</p>
+</body>
+</html>
