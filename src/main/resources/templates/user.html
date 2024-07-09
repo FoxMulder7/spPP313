@@ -15,7 +15,11 @@
     </tr>
     <tr>
         <td><span th:text="${#authentication.name}"></span></td>
-        <td><span th:text="${#authentication.authorities}"></span></td>
+        <td>
+            <ul th:each="role:${user.getRoles()}">
+            <li th:text="${role.getName().replace('ROLE_', '') + ' '}"></li>
+        </ul>
+        </td>
         <td><span th:text="${user.getEmail()}"></span></td>
     </tr>
 </table>
